@@ -1,0 +1,16 @@
+<%= form_for (@post) do |f| %>
+	<div class="field">
+	商品名
+	<%= f.text_field :name %></div>
+	<div class="field">
+	価格
+	<%= f.text_field :price %></div>
+	<div class="field">
+	商品説明
+	<%= f.text_area :description %></div>
+	<div class="field">
+	商品画像
+	<%= f.attachment_field :post_images_images, multiple: true %>
+	</div>
+	<%= f.submit "作成する" %>
+<% end %>
