@@ -15,7 +15,9 @@
  <% end %>
  <br>
  カテゴリー:
+ <% if @post.category.present? %>
  <%= @post.category.name %>
+ <% end %>
 <br>
 
 <%= link_to "戻る", posts_path %>
