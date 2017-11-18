@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 	add_breadcrumb 'Home', :posts_path
 
 	def index
-		@posts = Post.page(params[:page]).includes(:post_images).per(50)
+		@posts = Post.page(params[:page]).includes(:post_images, :category).per(50)
 	end
 
 	def new
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:name, :price, :description, :user_id, post_images_images: [])
+		params.require(:post).permit(:name, :price, :description, :user_id, :category_id, post_images_images: [])
 	end
 
 	def admin_user

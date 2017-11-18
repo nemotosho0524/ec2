@@ -10,19 +10,19 @@
 
   <body>
   	<% if user_signed_in? %>
-     <% if current_user.admin_flg? %>
-  	 Logged in as <%= current_user.email %>
-  	 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-     <%= link_to "出品する", new_post_path %>
-  	 <%= link_to "マイページ", users_path %>
-     <%= link_to "管理者ページ", rails_admin_path %>
-  	 <% else %>
+    Logged in as <%= current_user.email %>
      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  	 <% end %>
+      <% if current_user.admin_flg? %>
+       <%= link_to "出品する", new_post_path %>
+  	   <%= link_to "マイページ", users_path %>
+       <%= link_to "管理者ページ", rails_admin_path %>
+  	  <% end %>
      <% else %>
+     <%= link_to "会員登録", new_user_registration_path %>
      <%= link_to "ログイン", new_user_session_path %>
-     <% end %>
+    <% end %>
      <br>
+        <%= link_to "カテゴリー一覧", categories_path %>
      <%= render_breadcrumbs separator: ' > ' %>
     <%= yield %>
   </body>

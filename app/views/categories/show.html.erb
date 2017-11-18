@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>カテゴリー名:</strong>
+  <%= @category.name %>
+</p>
+
+　<% @category.posts.each do |post| %>
+   <%=link_to post.name, post_path %>
+  <% end %>
+
+
+<%= link_to '編集', edit_category_path(@category) %> |
+<%= link_to '戻る', categories_path %>

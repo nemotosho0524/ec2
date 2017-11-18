@@ -1,11 +1,11 @@
 <h2>商品詳細</h2>
-商品名
+商品名:
 <%= @post.name %><br>
-価格
+価格:
 <%= @post.price %><br>
-商品説明
+商品説明:
 <%= @post.description %><br>
-商品画像
+商品画像:
 <% if @post.post_images.present? %>
  <% @post.post_images.each do |image| %>
   <%= attachment_image_tag image, :image, :fill, 100, 100 %>
@@ -13,6 +13,9 @@
  <% else %>
  画像がありません
  <% end %>
+ <br>
+ カテゴリー:
+ <%= @post.category.name %>
 <br>
 
 <%= link_to "戻る", posts_path %>
