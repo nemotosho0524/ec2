@@ -1,0 +1,37 @@
+<%= form_with(model: order, local: true, url: post_order_path ) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "名前" %>
+    <%= form.text_field :order_name, id: :order_order_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "電話番号" %>
+    <%= form.text_field :tel, id: :order_tel %>
+  </div>
+
+  <div class="field">
+    <%= form.label "メールアドレス" %>
+    <%= form.text_field :email, id: :order_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label "住所" %>
+    <%= form.text_field :address, id: :order_address %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

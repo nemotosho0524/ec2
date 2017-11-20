@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
 	# get '/users/sign_up', to: redirect('/users/sign_in')
   devise_for :users, :controllers => {
     :sessions => "users/sessions",
@@ -11,6 +10,8 @@ Rails.application.routes.draw do
     resources :users, :only => [:index, :show]
 	root 'posts#index'
   resources :categories
-	resources :posts
+	resources :posts do
+    resource :order
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
