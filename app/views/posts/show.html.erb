@@ -19,7 +19,11 @@
  <%= @post.category.name %>
  <% end %>
 <br>
-<%= link_to "注文する", new_post_order_path(@post) %>
+<% if user_signed_in? %>
+    <div class="btn btn-default" role="button"><%= link_to "注文する", new_post_order_path(@post) %></div>
+  <% else %>
+    <a class="btn btn-default" href="../users/sign_up" role="button">注文する</a>
+<% end %><br>
 
 <%= link_to "戻る", posts_path %>
 <% if user_signed_in? %>

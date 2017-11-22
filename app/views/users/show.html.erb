@@ -1,0 +1,10 @@
+<% if current_user.admin_flg? %>
+  <% @orders.each do |order| %>
+    <%= order.post.name %>
+    <%= order.user.email %>
+  <% end %>
+<% else %>
+  <% @user.orders.each do |order| %>
+    <%= link_to order.order_name, post_path(@post) %>
+  <% end %>
+<% end %>

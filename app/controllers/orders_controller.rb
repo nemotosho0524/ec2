@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-
   # GET /orders
   # GET /orders.json
   def index
@@ -30,11 +29,19 @@ class OrdersController < ApplicationController
     @post = Post.find(params[:post_id])
     @order = Order.new(order_params)
     @order.post_id = @post.id
-    user_id = current_user.id
-    @order.user_id = user_id
+    @order.user_id = current_user.id
     @order.line_price = @post.price
-    @order.save
-    redirect_to posts_path
+
+   if @order.save
+      OrderMailer.order_when_create(current_user).deliver
+      OrderMailer.send_admin.deliver
+      redirect_to posts_path
+    else
+      respond_to do |format|
+      format.html { render :new }
+      format.json { render json: @post.order.errors, status: :unprocessable_entity }
+    end
+   end
   end
 
   # PATCH/PUT /orders/1
@@ -65,7 +72,6 @@ class OrdersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @post = Post.find(params[:post_id])
-      @order = Post.order.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

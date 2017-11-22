@@ -1,7 +1,8 @@
 <%= form_with(model: order, local: true, url: post_order_path ) do |form| %>
+
   <% if order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h2><%= pluralize(order.errors.count, "error") %></h2>
 
       <ul>
       <% order.errors.full_messages.each do |message| %>
@@ -17,7 +18,7 @@
   </div>
 
   <div class="field">
-    <%= form.label "電話番号" %>
+    <%= form.label "電話番号(ハイフンなし）" %>
     <%= form.text_field :tel, id: :order_tel %>
   </div>
 
