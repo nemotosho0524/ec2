@@ -33,8 +33,8 @@ class OrdersController < ApplicationController
     @order.line_price = @post.price
 
    if @order.save
-      OrderMailer.order_when_create(current_user).deliver
-      OrderMailer.send_admin.deliver
+      OrderMailer.order_when_create(@order).deliver
+      OrderMailer.send_admin(@order).deliver
       redirect_to posts_path
     else
       respond_to do |format|

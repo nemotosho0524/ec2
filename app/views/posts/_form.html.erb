@@ -1,20 +1,31 @@
-<%= form_for (@post) do |f| %>
+<%= form_for (@post) do |form| %>
+
 	<div class="field">
-	商品名
-	<%= f.text_field :name %></div>
-	<div class="field">
-	価格
-	<%= f.text_field :price %></div>
-	<div class="field">
-	商品説明
-	<%= f.text_area :description %></div>
-	<div class="field">
-	商品画像
-	<%= f.attachment_field :post_images_images, multiple: true %>
+	  <%= form.label "商品名" %><br>
+	  <%= form.text_field :name %>
 	</div>
+
 	<div class="field">
-	カテゴリー
-	<%= f.collection_select :category_id, Category.all, :id, :name %>
+	  <%= form.label "価格" %><br>
+	  <%= form.text_field :price %>
 	</div>
-	<%= f.submit "作成する" %>
+
+	<div class="field">
+	  <%= form.label "商品説明" %><br>
+	  <%= form.text_area :description %>
+	</div>
+
+	<div class="field">
+	  <%= form.label "商品画像" %><br>
+	  <%= form.attachment_field :post_images_images, multiple: true %>
+	</div>
+
+	<div class="field">
+	  <%= form.label "カテゴリー" %><br>
+	  <%= form.collection_select :category_id, Category.all, :id, :name %>
+	</div>
+
+	<div class="actions">
+	  <%= form.submit "作成する" %>
+    </div>
 <% end %>

@@ -5,15 +5,16 @@ class OrderMailer < ApplicationMailer
   #
   #   en.order_mailer.order_when_create.subject
   #
-  def order_when_create(user)
-    @user = user
-    mail to: user.email,
+  def order_when_create(order)
+    @order = order
+    mail to: order.email,
          subject: "ご注文ありがとうございます。"
   end
 
-  def send_admin
-    user = User.find_by(admin_flg: true)
-  		mail to: user.email,
+  def send_admin(order)
+    @order = order
+    admin = User.find_by(admin_flg: true)
+  		mail to: admin.email,
   		subject: "注文が入りました。"
   end
 end

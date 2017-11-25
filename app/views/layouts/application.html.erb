@@ -25,7 +25,8 @@
      <%= link_to "ログイン", new_user_session_path %>
     <% end %>
      <br>
-        <%= link_to "カテゴリー一覧", categories_path %>
+      <%= link_to "トップページ", root_path %>
+      <%= link_to "カテゴリー一覧", categories_path %>
      <%= render_breadcrumbs separator: ' > ' %>
     <%= yield %>
   </div>

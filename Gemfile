@@ -23,7 +23,7 @@ gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
-gem 'seed-fu'
+gem 'seed-fu', '~> 2.3'
 
 gem 'kaminari'
 
@@ -35,6 +35,8 @@ gem 'safe_yaml'
 gem 'breadcrumbs_on_rails'
 
 gem 'bootstrap-sass'
+
+gem 'rails-i18n'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

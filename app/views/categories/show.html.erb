@@ -4,11 +4,22 @@
   <strong>カテゴリー名:</strong>
   <%= @category.name %>
 </p>
-
-　<% @category.posts.each do |post| %>
-   <%=link_to post.name, post_path %>
+<table class="table">
+	<thead>
+		<tr>
+			<th>商品名</th>
+			<th>価格</th>
+		</tr>
+	</thead>
+ <tbody>
+ <tr>
+ <% @category.posts.each do |post| %>
+   <td><%=link_to post.name, post_path %><td>
+   <td><%= post.price %>
+   	</tr>
   <% end %>
-
+</tbody>
+</table>
 
 <%= link_to '編集', edit_category_path(@category) %> |
 <%= link_to '戻る', categories_path %>

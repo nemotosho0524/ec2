@@ -1,7 +1,7 @@
 <%= link_to "Home", posts_path %>
 <h2>マイページ</h2>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>商品名</th>
@@ -33,3 +33,4 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @posts %>

@@ -2,7 +2,7 @@
 
   <% if order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %></h2>
+      <h2><%= pluralize(order.errors.count, "エラー") %></h2>
 
       <ul>
       <% order.errors.full_messages.each do |message| %>
@@ -13,26 +13,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "名前" %>
+    <%= form.label "名前" %><br>
     <%= form.text_field :order_name, id: :order_order_name %>
   </div>
 
   <div class="field">
-    <%= form.label "電話番号(ハイフンなし）" %>
+    <%= form.label "電話番号(ハイフンなし）" %><br>
     <%= form.text_field :tel, id: :order_tel %>
   </div>
 
   <div class="field">
-    <%= form.label "メールアドレス" %>
+    <%= form.label "メールアドレス" %><br>
     <%= form.text_field :email, id: :order_email %>
   </div>
 
   <div class="field">
-    <%= form.label "住所" %>
+    <%= form.label "住所" %><br>
     <%= form.text_field :address, id: :order_address %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "注文する" %>
   </div>
 <% end %>

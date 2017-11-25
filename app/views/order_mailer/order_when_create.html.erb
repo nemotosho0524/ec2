@@ -1,5 +1,15 @@
-<h1>Order#order_when_create</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/order_mailer/order_when_create.html.erb
-</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+<h2><%= @order.order_name %>様</h2>
+<p>ご注文ありがとうございます。</p>
+ご注文内容<br>
+商品:<%= @order.post.name %><br>
+合計金額：<%= @order.line_price %><br>
+電話番号<%= @order.tel %><br>
+お届け先住所：<%= @order.address %>
+</body>
+</html>

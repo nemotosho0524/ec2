@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-	@posts = Post.all.includes(:post_images, :category)
+	@posts = Post.page(params[:page]).includes(:post_images, :category).per(50)
   end
 
   def new

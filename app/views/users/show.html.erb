@@ -1,8 +1,24 @@
 <% if current_user.admin_flg? %>
-  <% @orders.each do |order| %>
-    <%= order.post.name %>
-    <%= order.user.email %>
-  <% end %>
+  <table class="table">
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>価格</th>
+      <th>注文者</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= link_to order.post.name, post_path(@post) %></td>
+        <td><%= order.line_price %></td>
+        <td><%= order.order_name %></td>
+       </tr>
+     <% end %>
+  </tbody>
+</table>
 <% else %>
   <% @user.orders.each do |order| %>
     <%= link_to order.order_name, post_path(@post) %>
