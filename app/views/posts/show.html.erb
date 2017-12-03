@@ -1,24 +1,26 @@
 <h2>商品詳細</h2>
-商品名:
-<%= @post.name %><br>
-価格:
-<%= @post.price %><br>
-商品説明:
-<%= @post.description %><br>
-商品画像:
-<% if @post.post_images.present? %>
+<table class="table">
+	<tr>
+	  <th>商品名</th>
+	  <th>価格</th>
+	  <th>商品説明</th>
+	  <th>商品画像</th>
+	  <th>カテゴリー</th>
+	</tr>
+<td><%= @post.name %></td>
+<td><%= @post.price %></td>
+<td><%= @post.description %></td>
+<td><% if @post.post_images.present? %>
  <% @post.post_images.each do |image| %>
   <%= attachment_image_tag image, :image, :fill, 100, 100 %>
   <% end %>
  <% else %>
  画像がありません
- <% end %>
- <br>
- カテゴリー:
- <% if @post.category.present? %>
+ <% end %></td>
+ <td> <% if @post.category.present? %>
  <%= @post.category.name %>
- <% end %>
-<br>
+ <% end %></td>
+</table>
 <% if user_signed_in? %>
     <div class="btn btn-default" role="button"><%= link_to "注文する", new_post_order_path(@post) %></div>
   <% else %>

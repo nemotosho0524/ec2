@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>会員登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -21,8 +21,13 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <% if @noadmin %>
+    <div><%= f.label :admin_flg %><br />
+      <%= f.check_box :admin_flg, {:checked => true}, true, false %>
+    </div>
+    <% end %>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "新規登録" %>
   </div>
 <% end %>
 
