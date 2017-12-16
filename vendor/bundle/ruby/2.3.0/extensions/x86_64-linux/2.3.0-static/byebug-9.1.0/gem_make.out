@@ -1,0 +1,19 @@
+current directory: /var/www/rails/ECAPP2/vendor/bundle/ruby/2.3.0/gems/byebug-9.1.0/ext/byebug
+/home/ec2-user/.rbenv/versions/2.3.3/bin/ruby -r ./siteconf20171213-22394-vjxq5k.rb extconf.rb
+creating Makefile
+
+current directory: /var/www/rails/ECAPP2/vendor/bundle/ruby/2.3.0/gems/byebug-9.1.0/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /var/www/rails/ECAPP2/vendor/bundle/ruby/2.3.0/gems/byebug-9.1.0/ext/byebug
+make "DESTDIR="
+compiling threads.c
+compiling byebug.c
+compiling breakpoint.c
+compiling context.c
+compiling locker.c
+linking shared-object byebug/byebug.so
+
+current directory: /var/www/rails/ECAPP2/vendor/bundle/ruby/2.3.0/gems/byebug-9.1.0/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20171213-22394-gazfe8/byebug

@@ -1,0 +1,47 @@
+current directory: /var/www/rails/ECAPP2/vendor/bundle/ruby/2.3.0/gems/therubyracer-0.12.3/ext/v8
+/home/ec2-user/.rbenv/versions/2.3.3/bin/ruby -r ./siteconf20171213-22394-rngn8c.rb extconf.rb
+checking for main() in -lpthread... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /var/www/rails/ECAPP2/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/therubyracer-0.12.3/mkmf.log
+
+current directory: /var/www/rails/ECAPP2/vendor/bundle/ruby/2.3.0/gems/therubyracer-0.12.3/ext/v8
+make "DESTDIR=" clean
+
+current directory: /var/www/rails/ECAPP2/vendor/bundle/ruby/2.3.0/gems/therubyracer-0.12.3/ext/v8
+make "DESTDIR="
+compiling signature.cc
+compiling object.cc
+compiling exception.cc
+compiling message.cc
+compiling gc.cc
+compiling primitive.cc
+compiling date.cc
+compiling context.cc
+compiling init.cc
+compiling backref.cc
+compiling template.cc
+compiling locker.cc
+compiling handles.cc
+compiling accessor.cc
+compiling heap.cc
+compiling invocation.cc
+compiling value.cc
+compiling array.cc
+compiling v8.cc
+compiling script.cc
+compiling rr.cc
+compiling stack.cc
+compiling string.cc
+compiling constants.cc
+compiling function.cc
+compiling constraints.cc
+compiling trycatch.cc
+compiling external.cc
+linking shared-object v8/init.so
+
+current directory: /var/www/rails/ECAPP2/vendor/bundle/ruby/2.3.0/gems/therubyracer-0.12.3/ext/v8
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 init.so ./.gem.20171213-22394-tgsu05/v8
